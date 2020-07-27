@@ -7,6 +7,6 @@
     </form>
     <p>
     {% for data in myTodo %}
-    <p>{{data.id}} {{data.task}} <a href="/delete/{{ data.id }}" class="btn btn-danger">Delete</a> </p>
+    <p>{{data.task}} <a href="/delete/{{ data.id }}" class="btn btn-danger">Delete</a> <a href="/edit/{{ data.id }}" class="btn btn-warning">Edit</a></p>
     {% endfor %}
 {% endblock %}
