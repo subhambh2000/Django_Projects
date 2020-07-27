@@ -1,9 +1,8 @@
 from django.contrib import admin
 from django.urls import path
-from .views import todoview,addtask,deletetask
+from .views import todoview,addtask
 
 urlpatterns = [
     path('',todoview),
     path('addtask/',addtask),
-    path('delete/<int:taskid>/',deletetask),
 ]
