@@ -3,5 +3,5 @@ from django.urls import path
 from .views import adminloginview
 
 urlpatterns = [
-    path('admin/',adminloginview),
+    path('admin/',adminloginview,name='adminloginpage'),
 ]
