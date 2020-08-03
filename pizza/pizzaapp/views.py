@@ -4,18 +4,18 @@ from django.contrib.auth import authenticate,login
 
 def adminloginview(request):
     return render(request,"pizzaapp/adminlogin.html")
-def authenticateadmin(request):
+def authenticateadmin(request):    # function for the authentication of the credentials
     username = request.POST['username']
     password = request.POST['password']
 
     user = authenticate(username=username, password=password)
     # case 1: user exists
-    if user is not None:
+    if user is not None and user.username == "admin":
         login(request,user)
-
+        return redirect('adminhomepage')
     # case 2: user doesnot exists
     if user is None:
-        redirect('adminloginpage')
+        return redirect('adminloginpage')
 
-def adminhomepage(request):
+def adminhomepage(request):   # function for redirecting to the admin home page if the credentials are correct
     return render(request,"pizzaapp/adminhomepage.html")
